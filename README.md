@@ -10,7 +10,7 @@ I am a skilled PHP/Laravel Developer with experience in developing various web a
 
 ### Major Projects
 
-- **School ERP:** A comprehensive Educational Resource Planning system similar to ClassOn.
+- **School ERP:** A comprehensive Educational Resource Planning system similar to School ERP.
 - **School CMS:** A Content Management System tailored for schools.
 - **Driver Payroll:** A payroll system designed for drivers.
 - **Fleet Management Software:** A software solution for managing fleets of vehicles.
