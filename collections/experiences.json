@@ -1,0 +1,23 @@
+[
+  {
+    "dates": "2023 · 2024",
+    "role": "Laravel Developer - Team Lead",
+    "company": "SJ Solutions & Infotech",
+    "description": "I am currently working as a Laravel Developer at SJ Solutions & Infotech. I am responsible for the development of the company's internal and external web applications.",
+    "logo": "/assets/images/experiences/sj.png"
+  },
+  {
+    "dates": "2023",
+    "role": "Junior PHP Developer",
+    "company": "Agile Continental",
+    "description": "Worked as a Junior PHP Developer, advancing my Laravel expertise and building projects like an Expense Manager.",
+    "logo": "/assets/images/experiences/agile.png"
+  },
+  {
+    "dates": "2022 - 2023",
+    "role": "PHP Intern",
+    "company": "HB Infotech Solutions",
+    "description": "Began as a PHP Trainee, mastering foundational skills in PHP, SQL, and CodeIgniter.",
+    "logo": "/assets/images/experiences/hb.png"
+  }
+]
