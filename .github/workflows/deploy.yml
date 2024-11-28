@@ -1,0 +1,51 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]  # Deploy on push to the main branch
+  workflow_dispatch:  # Allows you to manually trigger this workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write  # Permissions for deployment
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  # Allow one concurrent deployment, no cancellations
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest  # Run the deployment on the latest Ubuntu environment
+    steps:
+      # Step 1: Checkout the code from your repository
+      - name: Checkout
+        uses: actions/checkout@v3  # Checks out the repository so we can access the files
+
+      # Step 2: Set up Node.js (if you're using Node.js for building the static site)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use Node.js version 16 (or any version you need)
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install  # Runs npm install to install dependencies from package.json
+
+      # Step 4: Build your static site
+      - name: Build static site
+        run: npx @devdojo/static build  # Replace with the build command specific to your static generator
+
+      # Step 5: Upload the built static site to be deployed
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './_site'  # Path to your generated static content (ensure this is correct)
+
+      # Step 6: Deploy the static content to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2  # Uses GitHub's Pages Action to deploy the site
